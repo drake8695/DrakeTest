@@ -22,3 +22,63 @@ select,
 textarea {
     max-width: 280px;
 }
+
+
+
+@media only screen and (max-width : 768px) {
+  .navbar-brand {
+        padding: 0px;
+        transform: translateX(-50%);
+        left: 50%;
+        position: absolute;
+    }
+
+    .navbar-brand > img {
+            height: 100%;
+            width: auto;
+            padding: 7px 14px;
+        }
+}
+
+
+.navbar .navbar-nav > li > a {
+    color: black;
+}
+.navbar .navbar-nav > li > a:hover {
+    color: #87CEFA;
+}
+.navbar-brand {
+    background: url("Pictures/SmallLogo.png") center / contain no-repeat;
+    width: 200px;
+    transform: translateX(-50%);
+    left: 50%;
+    position: absolute;
+    margin-top: 15px;
+}
+    .navbar-brand > img {
+        
+        height: 100%;
+        width: auto;
+        padding: 7px 14px;
+    }
+
+.navbar {
+    font-size: 18px;
+    background-color: white;
+    border-bottom: 10px solid #004B87;
+    
+    
+    
+}
+.nav {
+    margin-top: 15px;
+    margin-bottom: 15px;
+    text-align: center;
+    
+    
+}
+   
+
+
+
+
