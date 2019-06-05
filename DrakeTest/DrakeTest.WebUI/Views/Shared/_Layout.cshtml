@@ -25,7 +25,7 @@
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav navbar-right">
-                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                    <li><a href="@Url.Action("Index", "Home")"><span class="glyphicon glyphicon-home"></span> Home</a></li>
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
                         @* Check if User is Authenticated and if they are change var username to the current user's username.
@@ -35,8 +35,9 @@
                         }
                         @username<span class="caret"></span></a>
 
-                        <ul class="dropdown-menu" role="menu" style="text-align:center">
+                        <ul class="dropdown-menu" role="menu" style="left:0;">
                             @Html.Partial("_LoginPartial")
+                            <li class="divider"></li>
                         </ul>
                     </li>
                 </ul>
