@@ -9,6 +9,8 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using DrakeTest.WebUI.Models;
+using DrakeTest.Core.Models;
+using DrakeTest.Core.Contracts;
 
 namespace DrakeTest.WebUI.Controllers
 {
@@ -17,15 +19,13 @@ namespace DrakeTest.WebUI.Controllers
     {
         private ApplicationSignInManager _signInManager;
         private ApplicationUserManager _userManager;
+        private IRepository<Patient> patientRepository;
 
-        public AccountController()
-        {
-        }
+        
 
-        public AccountController(ApplicationUserManager userManager, ApplicationSignInManager signInManager )
+        public AccountController(IRepository<Patient> patientRepository)
         {
-            UserManager = userManager;
-            SignInManager = signInManager;
+            this.patientRepository = patientRepository;
         }
 
         public ApplicationSignInManager SignInManager
@@ -155,6 +155,19 @@ namespace DrakeTest.WebUI.Controllers
                 var result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {
+                    //register the patient model
+                    Patient patient = new Patient()
+                    {
+                        UserId = user.Id,
+                        FirstName = model.FirstName,
+                        LastName = model.LastName,
+                        DOB = model.DOB,
+                        PhoneNumber = model.PhoneNumber,
+                        Email = model.Email
+                    };
+
+                    patientRepository.Insert(patient);
+                    patientRepository.Commit();
                     await SignInManager.SignInAsync(user, isPersistent:false, rememberBrowser:false);
                     
                     // For more information on how to enable account confirmation and password reset please visit https://go.microsoft.com/fwlink/?LinkID=320771
