@@ -40,8 +40,8 @@ namespace DrakeTest.WebUI
 
 
             myMessage.Text = message.Body;
-            myMessage.Html = "<html><body><a href='' title='My Website'><img src='../Content/Pictures/SmallLogo.png' alt='My Image' border='0' /></a><br /><h1>My E-mail Title</h1>E-mail content.</body></html>" + @message.Body;
-            
+            myMessage.Html = "<html><body><a href='https://draketestweb.azurewebsites.net/'><img src='https://i.ibb.co/KmqKx7K/Small-Logo.png' alt='Small-Logo' border='0' height='100' width='200' ></a><br /><h1>My E-mail Title</h1>E-mail content.</body></html>" + @message.Body;
+
             var credentials = new NetworkCredential(
                        ConfigurationManager.AppSettings["mailAccount"],
                        ConfigurationManager.AppSettings["mailPassword"]

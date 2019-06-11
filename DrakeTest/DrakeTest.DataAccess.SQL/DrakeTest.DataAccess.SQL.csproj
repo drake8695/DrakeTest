@@ -49,13 +49,17 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DataContext.cs" />
-    <Compile Include="Migrations\201906050057355_InitialTest.cs" />
-    <Compile Include="Migrations\201906050057355_InitialTest.Designer.cs">
-      <DependentUpon>201906050057355_InitialTest.cs</DependentUpon>
+    <Compile Include="Migrations\201906110058231_PatientRecords.cs" />
+    <Compile Include="Migrations\201906110058231_PatientRecords.Designer.cs">
+      <DependentUpon>201906110058231_PatientRecords.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201906050102243_InitialTest2.cs" />
-    <Compile Include="Migrations\201906050102243_InitialTest2.Designer.cs">
-      <DependentUpon>201906050102243_InitialTest2.cs</DependentUpon>
+    <Compile Include="Migrations\201906110154346_PatientRecords1.cs" />
+    <Compile Include="Migrations\201906110154346_PatientRecords1.Designer.cs">
+      <DependentUpon>201906110154346_PatientRecords1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201906110224506_PatientRecords2.cs" />
+    <Compile Include="Migrations\201906110224506_PatientRecords2.Designer.cs">
+      <DependentUpon>201906110224506_PatientRecords2.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -72,11 +76,14 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201906050057355_InitialTest.resx">
-      <DependentUpon>201906050057355_InitialTest.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201906110058231_PatientRecords.resx">
+      <DependentUpon>201906110058231_PatientRecords.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201906050102243_InitialTest2.resx">
-      <DependentUpon>201906050102243_InitialTest2.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201906110154346_PatientRecords1.resx">
+      <DependentUpon>201906110154346_PatientRecords1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201906110224506_PatientRecords2.resx">
+      <DependentUpon>201906110224506_PatientRecords2.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

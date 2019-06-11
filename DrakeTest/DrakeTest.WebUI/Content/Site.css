@@ -80,11 +80,24 @@ textarea {
     
     
 }
+.dropdown-menu > li > a {
+    color: black;
+    display: block;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    left:0;
+    clear: both;
+    font-weight: normal;
+    line-height: 1.4285;
+    white-space: nowrap;
+}
 
 .dropdown-menu > form > li > a {
     color: black;
     display:block;
-    padding: 3px 20px;
+    padding: 10px 20px;
+    text-align:center;
     text-decoration: none;
     clear:both;
     font-weight: normal;
@@ -92,9 +105,7 @@ textarea {
     white-space:nowrap;
 }
 .dropdown-menu > form > li > a:focus, .dropdown-menu > form > li > a:hover {
-    color: black;
-    padding: 3px 20px;
-    text-decoration:none;
+   
     background-color: #f5f5f5;
     }
 .dropdown-menu > form > li :hover {

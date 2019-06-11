@@ -1,4 +1,5 @@
 ﻿using DrakeTest.Core.Models;
+
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -18,6 +19,7 @@ namespace DrakeTest.DataAccess.SQL
         }
 
         public DbSet<Patient> Patients { get; set; }
+        public DbSet<PatientRecords> PatientRecords { get; set; }
 
     }
 }

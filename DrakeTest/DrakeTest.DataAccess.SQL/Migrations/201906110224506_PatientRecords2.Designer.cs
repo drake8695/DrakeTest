@@ -7,13 +7,13 @@ namespace DrakeTest.DataAccess.SQL.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.2.0-61023")]
-    public sealed partial class InitialTest2 : IMigrationMetadata
+    public sealed partial class PatientRecords2 : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(InitialTest2));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(PatientRecords2));
         
         string IMigrationMetadata.Id
         {
-            get { return "201906050102243_InitialTest2"; }
+            get { return "201906110224506_PatientRecords2"; }
         }
         
         string IMigrationMetadata.Source
