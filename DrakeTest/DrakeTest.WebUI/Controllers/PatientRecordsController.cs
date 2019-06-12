@@ -24,7 +24,7 @@ namespace DrakeTest.WebUI.Controllers
         public ActionResult Index()
         {
             var userId = User.Identity.GetUserId();
-            List<PatientRecords> patientRecords = patientrecords.Collection().Where(p => p.UserId == userId).ToList();
+            List<PatientRecords> patientRecords = patientrecords.Collection().Where(p => p.UserId == userId).OrderBy(c => c.CreatedAt).ToList();
             return View(patientRecords);
         }
 

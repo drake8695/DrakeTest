@@ -10,8 +10,8 @@ namespace DrakeTest.Core.Models
     public class PatientRecords:BaseEntity
     {
         public string UserId { get; set; }
-        public string height { get; set; }
-        public string weight { get; set; }
+        public Double height { get; set; }
+        public Double weight { get; set; }
 
         public string test { get; set; }
 

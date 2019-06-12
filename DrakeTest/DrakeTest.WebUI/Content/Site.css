@@ -29,17 +29,19 @@ textarea {
 
 
 @media only screen and (max-width : 768px) {
-  .navbar-brand {
+    .navbar-brand {
         padding: 0px;
         transform: translateX(-50%);
         left: 50%;
         position: absolute;
+        
     }
 
     .navbar-brand > img {
             height: 100%;
             width: auto;
             padding: 7px 14px;
+            
         }
 }
 
@@ -54,9 +56,10 @@ textarea {
     background: url("Pictures/SmallLogo.png") center / contain no-repeat;
     width: 200px;
     transform: translateX(-50%);
-    left: 50%;
+    left: 51%;
     position: absolute;
     margin-top: 15px;
+
 }
     .navbar-brand > img {
         

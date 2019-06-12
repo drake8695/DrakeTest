@@ -61,6 +61,10 @@
     <Compile Include="Migrations\201906110224506_PatientRecords2.Designer.cs">
       <DependentUpon>201906110224506_PatientRecords2.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201906120249131_PatientRecords3.cs" />
+    <Compile Include="Migrations\201906120249131_PatientRecords3.Designer.cs">
+      <DependentUpon>201906120249131_PatientRecords3.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SQLRepository.cs" />
@@ -84,6 +88,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201906110224506_PatientRecords2.resx">
       <DependentUpon>201906110224506_PatientRecords2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201906120249131_PatientRecords3.resx">
+      <DependentUpon>201906120249131_PatientRecords3.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
