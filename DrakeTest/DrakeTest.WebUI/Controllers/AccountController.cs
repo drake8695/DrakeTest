@@ -174,9 +174,10 @@ namespace DrakeTest.WebUI.Controllers
                         UserId = user.Id,
                         FirstName = model.FirstName,
                         LastName = model.LastName,
-                        DOB = model.DOB,
+                        DOB =model.DOB,
                         PhoneNumber = model.PhoneNumber,
-                        Email = model.Email
+                        Email = model.Email,
+                        Gender =model.Gender
                     };
 
                     patientRepository.Insert(patient);

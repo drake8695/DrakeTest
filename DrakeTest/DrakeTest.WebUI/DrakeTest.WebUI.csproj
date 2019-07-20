@@ -365,6 +365,10 @@
       <Project>{BBF446A3-33D9-4E32-823D-3AA39B435EAA}</Project>
       <Name>DrakeTest.DataAccess.SQL</Name>
     </ProjectReference>
+    <ProjectReference Include="..\DrakeTest.Services\DrakeTest.Services.csproj">
+      <Project>{E4E01532-C9B5-4BAF-A582-FC397568188B}</Project>
+      <Name>DrakeTest.Services</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

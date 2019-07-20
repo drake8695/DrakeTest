@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using DrakeTest.Services.Attributes;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
 namespace DrakeTest.WebUI.Models
@@ -90,6 +91,10 @@ namespace DrakeTest.WebUI.Models
         public string DOB { get; set; }
         [Required]
         public string PhoneNumber { get; set; }
+
+        [Required]
+        [GenderDataType]
+        public string Gender { get; set; }
        
     }
 

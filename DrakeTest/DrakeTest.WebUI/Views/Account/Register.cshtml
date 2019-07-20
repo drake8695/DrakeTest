@@ -32,25 +32,34 @@
     <div class="form-group">
         @Html.LabelFor(m => m.FirstName, new { @class = "col-md-2 control-label" })
         <div class="col-md-10">
-            @Html.PasswordFor(m => m.FirstName, new { @class = "form-control" })
+            @Html.TextBoxFor(m => m.FirstName, new { @class = "form-control" })
         </div>
     </div>
     <div class="form-group">
         @Html.LabelFor(m => m.LastName, new { @class = "col-md-2 control-label" })
         <div class="col-md-10">
-            @Html.PasswordFor(m => m.LastName, new { @class = "form-control" })
+            @Html.TextBoxFor(m => m.LastName, new { @class = "form-control" })
         </div>
     </div>
     <div class="form-group">
         @Html.LabelFor(m => m.DOB, new { @class = "col-md-2 control-label" })
         <div class="col-md-10">
-            @Html.PasswordFor(m => m.DOB, new { @class = "form-control" })
+            @Html.TextBoxFor(m => m.DOB, new { @class = "form-control", type = "date" })
         </div>
     </div>
     <div class="form-group">
         @Html.LabelFor(m => m.PhoneNumber, new { @class = "col-md-2 control-label" })
         <div class="col-md-10">
-            @Html.PasswordFor(m => m.PhoneNumber, new { @class = "form-control" })
+            @Html.TextBoxFor(m => m.PhoneNumber, new { @class = "form-control", type = "tel" })
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Gender, new { @class = "col-md-2 control-label" })
+        <div class="col-md-10">
+            Male
+            @Html.RadioButtonFor(m => m.Gender, "Male")
+            Female
+            @Html.RadioButtonFor(m => m.Gender, "Female")
         </div>
     </div>
     <div class="form-group">
