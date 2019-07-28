@@ -1,66 +1,115 @@
 ﻿@model IEnumerable<DrakeTest.Core.Models.PatientRecords>
 
 @{
+    /**/
+
     ViewBag.Title = "Index";
 }
 
 
 
+<!-- Breadcrumbs-->
+<div class="nav-container">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+            <a href="#">Dashboard</a>
+        </li>
+
+        <li class="breadcrumb-item active">Overview</li>
 
 
-    <div style="margin-left:15px;margin-bottom:10px;"><a href="@Url.Action("Create","PatientRecords")"><button type="button" class="btn btn-primary">Create New</button></a></div>
+    </ol>
+    @*<a href="@Url.Action("Create","PatientRecords")">*@
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal" data-toggle="tooltip" title="Create A New Record" style="position: absolute;right: 1rem;top: 50%;transform: translateY(-50%);">Create New</button>
+</div>
+<!-- /Breadcrumbs-->
+<!-- Modal-->
+<div id="myModal" class="modal fade">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Create A New Record</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
 
-@foreach (var item in Model)
-{
-
-<div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
-    <div class="thumbnail">
-        <div class="caption">
-            <div class='col-lg-12'>
-                <a href="@Url.Action("Edit", "PatientRecords", new { id = item.Id })"><span class="glyphicon glyphicon-edit">Edit</span>
-                <a href="@Url.Action("Delete", "PatientRecords", new { id = item.Id })"><span class="glyphicon glyphicon-trash pull-right text-primary">Delete</span></a>
             </div>
-            <div class='col-lg-12 well well-add-card'>
-                @{
-                    var weight = item.weight;
-                    var height = item.height;
+            
 
-                    var BMI = (weight * 703) / (height * height);
-                    BMI = Math.Round(BMI, 2);
-                    var BMIDESC = "";
-                    if (BMI < 18.5)
-                    {
-                        BMIDESC = "Too thin.";
-                    }
-                    if (BMI > 18.5 && BMI < 25)
-                    {
-                        BMIDESC = "Healthy.";
-                    }
-                    if (BMI > 25)
-                    {
-                        BMIDESC = "Overweight.";
-                    }
-                }
-                <h4>BMI: @BMI  + @BMIDESC</h4>
-            </div>
-            <div class='col-lg-12'>
-              
-                <p>Height: @Html.DisplayFor(modelItem => item.height)</p>
-                <p>Weight:@Html.DisplayFor(modelItem => item.weight)</p>
-                <p>Test: @Html.DisplayFor(modelItem => item.test)</p>
-                <p class"text-muted">Created at: @Html.DisplayFor(modelItem => item.CreatedAt)</p>
-            </div>
-           
-            <button type="button" class="btn btn-primary btn-xs btn-update btn-add-card" style="visibility: hidden;"></button>
-           
+                <div class="modal-body">
+                    <p>@Html.Partial("Create", new DrakeTest.Core.Models.PatientRecords())</p>
+                </div>
+                <div class="modal-footer">
+                    @Html.ActionLink("Back to Dashboard", "Index")
+                </div>
+            }
         </div>
     </div>
 </div>
-  
+<!-- /Modal-->
+<div class="row">
+    @foreach (var item in Model)
+    {
 
-}
+
+        var weight = item.weight;
+        var height = item.height;
+
+        var BMI = (weight * 703) / (height * height);
+        BMI = Math.Round(BMI, 2);
+        var BMIDESC = "";
+        if (BMI < 18.5)
+        {
+            BMIDESC = "Too thin";
+        }
+        if (BMI > 18.5 && BMI < 25)
+        {
+            BMIDESC = "Healthy";
+        }
+        if (BMI > 25)
+        {
+            BMIDESC = "Overweight";
+        }
+
+
+        <div class="col-xl-3 col-sm-6 mb-3">
+            <div class="card text-white bg-primary o-hidden">
+                <div class="card-body">
+                    <h4 class="card-title font-weight-bold">@BMIDESC</h4>
+                    <p class="card-text">BMI:</p>
+                    <div class="d-flex justify-content-between">
+
+
+                        <p class="display-4">@BMI</p>
+
+
+                    </div>
+
+                    <p><i class="fa fa-tint fa-lg text-info pr-1"></i>Height: @Html.DisplayFor(modelItem => item.height) inches </p>
+                    <p><i class="fa fa-balance-scale fa-lg grey-text pr-1"></i>Weight: @Html.DisplayFor(modelItem => item.weight) Lbs</p>
+
+                    <div class="card-body-icon">
+                        <i class="fa fa-heartbeat" aria-hidden="true"></i>
+                    </div>
+                    <div class="mr-5">Created at: @Html.DisplayFor(modelItem => item.CreatedAt)</div>
+                </div>
+                <a class="card-footer text-white clearfix small z-1" href="@Url.Action("Edit", "PatientRecords", new { id = item.Id })">
+                    <span class="float-left">Edit</span>
+                    <span class="float-right">
+                        <i class="fa fa-edit"></i>
+                    </span>
+                </a>
+                <a class="card-footer text-white clearfix small z-1" href="@Url.Action("Delete", "PatientRecords", new { id = item.Id })">
+                    <span class="float-left">Delete</span>
+                    <span class="float-right">
+                        <i class="fa fa-trash" aria-hidden="true"></i>
+                    </span>
+                </a>
+            </div>
+        </div>
+    }
+</div>
+
 <div class=row></div>
-<hr/>
+<hr />
 <div class="container">
     <div class="text-center">
         <h2 style="text-align:left;">BMI Table</h2>
